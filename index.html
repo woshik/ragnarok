@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ROBrowser's App from https://www.robrowser.com</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+	<div id="robrowser">Initializing roBrowser...</div>
+
+	<script type="text/javascript" src="api.js"></script>
+	<script type="text/javascript">
+		window.addEventListener('load', function () {
+			var ROConfig = {
+				development: true,
+				target: document.getElementById('robrowser'),
+				type: ROBrowser.TYPE.FRAME,
+				application: ROBrowser.APP.ONLINE,
+				remoteClient: 'http://localhost/client',
+				width: 800,
+				height: 600,
+				skipIntro: false,
+				servers: [],
+				packetver: 20130513,
+			};
+
+			var RO = new ROBrowser(ROConfig);
+			RO.start();
+		});
+	</script>
+</body>
+
+</html>
